@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+APPDIR=${APPDIR:-$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)}
+export LGHUB_ELECTRON="$APPDIR/usr/electron/electron"
+export LGHUB_SHELL="$APPDIR/usr/app/packaging/electron.cjs"
+# Use an unused loopback port when running alongside the development service.
+export LGHUB_PORT=${LGHUB_PORT:-0}
+if [ "${1:-}" = "--version" ]; then
+    printf '%s\n' 'G HUB Linux 0.1.0 (x86_64 AppImage)'
+    exit 0
+fi
+if [ "${1:-}" = "--cli" ]; then
+    shift
+    exec "$APPDIR/usr/bin/node" "$APPDIR/usr/app/src/cli.ts" "$@"
+fi
+exec "$APPDIR/usr/bin/node" "$APPDIR/usr/app/scripts/desktop.ts" "$@"

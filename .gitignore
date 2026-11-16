@@ -1,0 +1,57 @@
+# Dependencies and generated binaries
+node_modules/
+/native/*.node
+/native/build/
+/build/
+/dist/
+coverage/
+*.AppImage
+*.AppImage.sha256
+*.o
+*.so
+*.tsbuildinfo
+
+# Local credentials and environment files (examples may be committed)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*.json
+*secrets*.json
+.npmrc
+.netrc
+.ssh/
+.aws/
+
+# Device observations, backups, local assignments and profiles
+/research/
+/backups/
+/captures/
+/recordings/
+/profiles/
+/config/
+/.config/
+/data/
+assignments.json
+*-evidence.json
+onboard-save-result.json
+*.pcap
+*.pcapng
+*.har
+*.log
+*.tmp
+*.bak
+
+# Local-only maintenance command and extracted proprietary assets
+/scripts/save-current-onboard.ts
+/public/assets/
+
+# Editor and desktop state
+.idea/
+.vscode/
+.DS_Store
+*~
+*.swp

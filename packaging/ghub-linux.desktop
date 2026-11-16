@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=G HUB Linux
+Comment=Logitech mouse settings, button assignments and macros
+Exec=AppRun
+Icon=ghub-linux
+Categories=Settings;
+Terminal=false
+StartupWMClass=G HUB Linux

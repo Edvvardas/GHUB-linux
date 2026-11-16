@@ -1,0 +1,21 @@
+{
+  "name": "ghub-linux-typescript",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent Linux G HUB-style mouse controls, assignments and macros",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node src/server.ts",
+    "desktop": "node scripts/desktop.ts",
+    "test": "node --test --test-isolation=none \"tests/**/*.test.ts\"",
+    "build:native": "bash native/build.sh",
+    "prestart": "npm run build:native",
+    "predesktop": "npm run build:native",
+    "test:browser": "node scripts/browser-smoke.ts",
+    "cli": "node src/cli.ts",
+    "appimage": "python3 scripts/fetch-appimage.py && python3 scripts/build-appimage.py"
+  }
+}

@@ -1,0 +1,3 @@
+# Active desktop user only: mouse event interfaces under the observed receiver.
+# Must precede systemd's 73-seat-late.rules so uaccess ACLs are applied.
+SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_MOUSE}=="1", ENV{ID_VENDOR_ID}=="046d", ENV{ID_MODEL_ID}=="c547", TAG+="uaccess"

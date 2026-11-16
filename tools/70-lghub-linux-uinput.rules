@@ -1,0 +1,3 @@
+# Optional: virtual input creation for the active desktop user.
+# /dev/uinput can emit keyboard and pointer events; it cannot be scoped to a mouse.
+SUBSYSTEM=="misc", KERNEL=="uinput", TAG+="uaccess"
